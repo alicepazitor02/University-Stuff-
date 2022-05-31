@@ -1,0 +1,17 @@
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+int main()
+{
+    
+    std::vector<std::string> words {};
+    string st;
+ 
+   while(cin>>st){
+      words.push_back(st); 
+   }
+    
+    for (int i = 1; i < words.size(); i+=2)
+        std::cout << words[i] << "\n";
+}
