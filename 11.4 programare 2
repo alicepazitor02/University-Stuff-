@@ -1,0 +1,40 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+struct myclass {
+  bool operator() (int i,int j) { return (i%10<j%10);}
+} myobject;
+struct myclass1{
+    bool operator() (double i, double j){ 
+        i-=(int)i;
+        j-=(int)j;
+        return(i<j);
+    }
+}myobj;
+int main(){
+    vector<double> v = {};
+    double x;
+    while(cin>>x)
+        v.push_back(x);
+  
+    sort(v.begin(), v.end());
+      for (auto x : v)
+        cout << x << ";";
+    cout<<'\n';
+    sort(v.begin(), v.end(),greater<double>());
+      for (auto x : v)
+        cout << x << ";";
+    cout<<'\n';
+    sort(v.begin(), v.end(),myobject);
+      for (auto x : v)
+        cout << x << ";";
+    cout<<'\n';
+    sort(v.begin(), v.end(),myobj);
+      for (auto x : v)
+        cout << x << ";";
+    cout<<'\n';
+    
+  
+    return 0;
+}
